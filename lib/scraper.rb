@@ -69,9 +69,9 @@ class Scraper
     end 
     
     prof_link = {:twitter => tweet,
-     :linkedin => linkedin,
-     :github => github,
-     :blog => blog,
+     :linkedin => linkedin if linkedin,
+     :github => github if github,
+     :blog => blog if blog,
      :profile_quote => profile_page.css('.profile-quote').text,
      :bio => profile_page.css(".description-holder p").text
     }
