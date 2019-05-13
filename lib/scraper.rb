@@ -56,7 +56,7 @@ class Scraper
       elsif x.attr('href').include?("github")
         github = x.attr('href')
         next
-      elsif x.attr('href').include?("blog")
+      else
         blog = x.attr('href')
         next
       end 
