@@ -48,20 +48,29 @@ class Scraper
     
     profile_page.css('.social-icon-container a').each do |x| 
       if x.attr('href').include("twitter")
-        x.attr('href')
+        tweet = x.attr('href')
         next 
-      elsif 
-    link
-    git
-    blo
+      elsif x.attr('href').include("linkedin")
+        linkedin = x.attr('href')
+        next
+      elsif x.attr('href').include("github")
+        github = x.attr('href')
+        next
+      elsif x.attr('href').include("blog")
+        blog = x.attr('href')
+        next
+      end 
+    end 
+  end 
     
-    prof_link = {:twitter => profile_page.css('.social-icon-container a')[0].attr('href'),
-     :linkedin => profile_page.css('.social-icon-container a')[1].attr('href'),
-     :github => profile_page.css('.social-icon-container a')[2].attr('href'),
-     :blog => profile_page.css('.social-icon-container a')[3].attr('href'),
+    prof_link = {:twitter => tweet,
+     :linkedin => linkedin,
+     :github => github,
+     :blog => blog,
      :profile_quote => profile_page.css('.profile-quote').text,
      :bio => profile_page.css(".description-holder p").text
     }
+    
     binding.pry
     prof_link
     #profile_page.css(".profile-photo a").each do |profile_link|
