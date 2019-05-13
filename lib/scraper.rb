@@ -53,7 +53,7 @@ class Scraper
      :profile_quote => profile_page.css('.profile-quote').text,
      :bio => profile_page.css(".description-holder p").text
     }
-    binding.pry
+    prof_link
     #profile_page.css(".profile-photo a").each do |profile_link|
     #    st_profile_url = "#{profile_link.attr('href')}"
     #    profie_scrape << {name: st_name, location: st_location, profile_url: st_profile_url}
