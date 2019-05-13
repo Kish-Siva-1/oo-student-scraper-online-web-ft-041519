@@ -50,7 +50,7 @@ class Scraper
      :linkedin => profile_page.css('.social-icon-container a')[1].attr('href')
      :github => profile_page.css('.social-icon-container a')[2].attr('href')
      :blog => profile_page.css('.social-icon-container a')[3].attr('href')
-     :profile_quote => 
+     :profile_quote => profile_page.css('.profile-quote').text
      
     }
     end
