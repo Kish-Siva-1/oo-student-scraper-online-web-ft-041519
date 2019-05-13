@@ -11,7 +11,7 @@ class Student
     elsif student_hash[:location]
       @location = student_hash[:location]
     end 
-  
+  binding.pry
   end
 
   def self.create_from_collection(students_array)
