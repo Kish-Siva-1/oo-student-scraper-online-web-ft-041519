@@ -21,7 +21,7 @@ class Student
     @blog = attributes_hash[:blog] if attributes_hash[:blog]  
     @linkedin = attributes_hash[:linkedin] if attributes_hash[:linkedin]
     @profile_quote = attributes_hash[:profile_quote] if attributes_hash[:profile_quote]
-    
+    @twitter = attributes_hash[:twitter] if attributes_hash[:blog]
   end
 
   def self.all
