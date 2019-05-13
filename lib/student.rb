@@ -17,7 +17,8 @@ class Student
   end
 
   def add_student_attributes(attributes_hash)
-    if attributes_hash[:]
+    @bio attributes_hash[:bio]
+      
   end
 
   def self.all
