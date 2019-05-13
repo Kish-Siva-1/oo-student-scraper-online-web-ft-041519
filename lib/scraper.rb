@@ -54,6 +54,8 @@ class Scraper
     prof_link[:profile_quote] = profile_page.css('.profile-quote').text
     prof_link[:bio] = profile_page.css(".description-holder p").text
     
+    prof_link
+    
   end
 
 end
