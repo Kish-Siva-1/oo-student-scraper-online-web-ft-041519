@@ -52,7 +52,7 @@ class Scraper
     blog = nil
     
     profile_page.css('.social-icon-container a').each do |x| 
-    binding.pry
+
       if x.attr('href').include?("twitter")
         tweet = x.attr('href')
         next 
@@ -68,7 +68,6 @@ class Scraper
       end 
     end 
     
-    binding.pry
     prof_link = {:twitter => tweet,
      :linkedin => linkedin,
      :github => github,
@@ -77,7 +76,6 @@ class Scraper
      :bio => profile_page.css(".description-holder p").text
     }
     
-    binding.pry
     prof_link
     #profile_page.css(".profile-photo a").each do |profile_link|
     #    st_profile_url = "#{profile_link.attr('href')}"
