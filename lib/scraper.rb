@@ -46,7 +46,11 @@ class Scraper
   def self.scrape_profile_page(profile_url)
     profile_page = Nokogiri::HTML(open(profile_url))
     
-    tweet = if profile_page.css('.social-icon-container a')[0].attr('href').include("") then 
+    profile_page.css('.social-icon-container a').each do |x| 
+      if x.attr('href').include("twitter")
+        x.attr('href')
+        
+      elsif 
     link
     git
     blo
