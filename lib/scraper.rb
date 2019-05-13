@@ -46,6 +46,7 @@ class Scraper
   def self.scrape_profile_page(profile_url)
     profile_page = Nokogiri::HTML(open(profile_url))
     
+    prof_link = {}
     tweet = nil
     linkedin = nil
     github = nil
@@ -55,26 +56,26 @@ class Scraper
 
       if x.attr('href').include?("twitter")
         tweet = x.attr('href')
+        prof_link[:twitter] = tweet
         next 
       elsif x.attr('href').include?("linkedin")
         linkedin = x.attr('href')
+        prof_link[:linkedin] = linkedin
         next
       elsif x.attr('href').include?("github")
         github = x.attr('href')
+        prof_link[:github] = github
         next
       else
         blog = x.attr('href')
+        prof_link[:blog] = blog
         next
       end 
+      
     end 
     
-    prof_link = {if tweet != nil then :twitter => tweet end,
-     if linkedin != nil then :linkedin => linkedin end,
-     if github != nil then :github => github end,
-     if blog != nil then :blog => blog end,
-     :profile_quote => profile_page.css('.profile-quote').text,
-     :bio => profile_page.css(".description-holder p").text
-    }
+    prof_link[:profile_quote] = profile_page.css('.profile-quote').text
+    prof_link[:bio] = profile_page.css(".description-holder p").text
     
     #prof_link = {:twitter => if tweet then tweet end,
     # :linkedin => if linkedin then linkedin end,
