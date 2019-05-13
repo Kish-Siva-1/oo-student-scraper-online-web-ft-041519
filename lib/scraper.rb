@@ -68,13 +68,21 @@ class Scraper
       end 
     end 
     
-    prof_link = {:twitter => if tweet then tweet end,
-     :linkedin => if linkedin then linkedin end,
-     :github => if github then github end,
-     :blog => if blog then blog end,
+    prof_link = {if tweet != nil then :twitter => tweet end,
+     if linkedin != nil then :linkedin => linkedin end,
+     if github != nil then :github => github end,
+     if blog != nil then :blog => blog end,
      :profile_quote => profile_page.css('.profile-quote').text,
      :bio => profile_page.css(".description-holder p").text
     }
+    
+    #prof_link = {:twitter => if tweet then tweet end,
+    # :linkedin => if linkedin then linkedin end,
+    # :github => if github then github end,
+    # :blog => if blog then blog end,
+    # :profile_quote => profile_page.css('.profile-quote').text,
+    # :bio => profile_page.css(".description-holder p").text
+    #}
     binding.pry
     prof_link
     #profile_page.css(".profile-photo a").each do |profile_link|
