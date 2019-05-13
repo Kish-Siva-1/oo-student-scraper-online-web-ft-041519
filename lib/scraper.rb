@@ -47,7 +47,7 @@ class Scraper
     prof_link = []
     profile_page = Nokogiri::HTML(open(profile_url))
     binding.pry
-    profile_page.css(".profile-photo a").each do |profile_link|
+    profile_page.css(".social-icon-container a").each do |profile_link|
       puts "#{profile_link.attr('href')}"
       binding.pry
     end
