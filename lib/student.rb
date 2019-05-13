@@ -20,7 +20,8 @@ class Student
     @bio = attributes_hash[:bio] if attributes_hash[:bio]
     @blog = attributes_hash[:blog] if attributes_hash[:blog]  
     @linkedin = attributes_hash[:linkedin] if attributes_hash[:linkedin]
-    @blog = attributes_hash[:blog] if attributes_hash[:blog]
+    @profile_quote = attributes_hash[:profile_quote] if attributes_hash[:profile_quote]
+    
   end
 
   def self.all
