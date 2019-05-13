@@ -17,7 +17,7 @@ class Student
   end
 
   def add_student_attributes(attributes_hash)
-    @bio attributes_hash[:bio]
+    @bio = attributes_hash[:bio] if attributes_hash[:bio]
       
   end
 
