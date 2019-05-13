@@ -46,8 +46,10 @@ class Scraper
   def self.scrape_profile_page(profile_url)
     prof_link = []
     profile_page = Nokogiri::HTML(open(profile_url))
-    {:twitter => profile_page.css('.social-icon-container a').attr('href').text
-     :github => profile_page.css('.social-icon-container a').attr('href').text
+    {:twitter => profile_page.css('.social-icon-container a')[0].attr('href')
+     :linkedin => profile_page.css('.social-icon-container a')[1].attr('href')
+     :github => profile_page.css('.social-icon-container a')[2].attr('href')
+     :blog => profile_page.css('.social-icon-container a')[3].attr('href')
     }
     end
     binding.pry
