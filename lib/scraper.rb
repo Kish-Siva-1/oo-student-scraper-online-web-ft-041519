@@ -44,9 +44,8 @@ class Scraper
   #"I grew up outside of the Washington DC (NoVA!) and went to college at Carnegie Mellon University in Pittsburgh. After college, I worked as an Oracle consultant for IBM for a bit and now I teach here at The Flatiron School."}}
 
   def self.scrape_profile_page(profile_url)
-    prof_link = []
     profile_page = Nokogiri::HTML(open(profile_url))
-    prof_link << {:twitter => profile_page.css('.social-icon-container a')[0].attr('href'),
+    prof_link = {:twitter => profile_page.css('.social-icon-container a')[0].attr('href'),
      :linkedin => profile_page.css('.social-icon-container a')[1].attr('href'),
      :github => profile_page.css('.social-icon-container a')[2].attr('href'),
      :blog => profile_page.css('.social-icon-container a')[3].attr('href'),
