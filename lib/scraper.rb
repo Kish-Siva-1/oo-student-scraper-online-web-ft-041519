@@ -61,6 +61,7 @@ class Scraper
         next
       end 
     end 
+    
     binding.pry
     prof_link = {:twitter => tweet,
      :linkedin => linkedin,
