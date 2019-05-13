@@ -49,7 +49,7 @@ class Scraper
     profile_page.css('.social-icon-container a').each do |x| 
       if x.attr('href').include("twitter")
         x.attr('href')
-        
+        next 
       elsif 
     link
     git
