@@ -68,7 +68,7 @@ class Scraper
       end 
     end 
     
-    prof_link = {:twitter => tweet,
+    prof_link = {:twitter => tweet if tweet,
      :linkedin => linkedin if linkedin,
      :github => github if github,
      :blog => blog if blog,
