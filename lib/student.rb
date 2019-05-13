@@ -6,7 +6,9 @@ class Student
 
   def initialize(student_hash)
     if student_hash[name] 
-      student_hash[name]
+      @name = student_hash[name]
+    elsif
+      @
   end
 
   def self.create_from_collection(students_array)
