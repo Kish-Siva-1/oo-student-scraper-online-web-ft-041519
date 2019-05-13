@@ -5,11 +5,13 @@ class Student
   @@all = []
 
   def initialize(student_hash)
+    
     if student_hash[name] 
       @name = student_hash[:name]
     elsif student_hash[:location]
       @location = student_hash[:location]
     end 
+  
   end
 
   def self.create_from_collection(students_array)
