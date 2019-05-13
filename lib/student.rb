@@ -5,12 +5,8 @@ class Student
   @@all = []
 
   def initialize(student_hash)
-    
-    if student_hash[name] 
-      @name = student_hash[:name]
-    elsif student_hash[:location]
-      @location = student_hash[:location]
-    end 
+    @name = student_hash[:name] if student_hash[:name] 
+    @location = student_hash[:location] if student_hash[:location]
   binding.pry
   end
 
