@@ -62,10 +62,10 @@ class Scraper
       end 
     end 
     binding.pry
-    prof_link = {:twitter => tweet if tweet,
-     :linkedin => linkedin if linkedin,
-     :github => github if github,
-     :blog => blog if blog,
+    prof_link = {:twitter => tweet,
+     :linkedin => linkedin,
+     :github => github,
+     :blog => blog,
      :profile_quote => profile_page.css('.profile-quote').text,
      :bio => profile_page.css(".description-holder p").text
     }
